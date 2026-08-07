@@ -1,143 +1,119 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charSet="UTF-8">
-    <title>Broken Web Page Example</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slightly Bugged Web Page</title>
     
-    <!-- Issue 1: Broken link tag syntax -->
-    <link rel="stylesheet" href="style.css" type="text/css"
+    <link rel="stylesheet" href="style.css">
     
-    <!-- Issue 2: Invalid internal stylesheet syntax -->
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f0f0f0
-            color: #333
-            margin: 0
+            background-color: #f0f0f0;
+            color: #333;
+            margin: 0;
             padding: 0;
         }
 
-        /* Issue 3: Missing selector name */
-        {
-            background-color: #333;
-            color: #fff;
-            padding: 10px;
+        .header {
+            background-color: #1e293b;
+            color: white;
+            text-align: center;
+            padding: 20px;
         }
 
         .container {
             width: 80%;
-            margin: 0 auto;
-        
-        /* Issue 4: Unclosed class block above breaks .card styling */
-        .card {
-            background: white;
-            border: 1px solid #ddd;
-            padding: 15px;
-            margin-top: 10px;
+            margin: 20px auto;
         }
 
-        /* Issue 5: Invalid property & missing colon */
-        .btn 
-            background color blue;
+        /* Issue 1: Unclosed CSS block */
+        .card {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        
+        .btn {
+            background-color: #2563eb;
             color: white;
             padding: 10px 15px;
-            border-radius: 5px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #e2e8f0;
         }
     </style>
 </head>
 <body>
 
-    <!-- Issue 6: Mismatched heading tags -->
-    <h1>Welcome to My Broken Page</h3>
+    <div class="header">
+        <h1>Welcome to My Portal</h1>
+    </div>
 
-    <!-- Issue 7: Unclosed container div -->
+    <!-- Issue 2: Unclosed container div -->
     <div class="container">
-        <p>This page contains intentional syntax, logical, and structural errors for testing and debugging practice.</p>
-
-        <!-- Issue 8: Invalid image tag and broken attributes -->
-        <img src="avatar.jpg" alt="User Profile" height="100px" width=100px
-
-        <!-- Issue 9: Mismatched list tags -->
-        <ul>
-            <li>First Item</li>
-            <li>Second Item
-            <li>Third Item</p>
-        </ol>
-
-        <!-- Issue 10: Broken hyperlink with invalid quotes and missing target -->
-        <p>Click <a href=https://example.com target"_blank">here</a> to visit an external website.</p>
-
-        <!-- Issue 11: Duplicate ID attributes -->
-        <div id="main-content">
-            <h2>Section 1</h2>
-            <p>Some section text goes here...</p>
+        <div class="card">
+            <h2>User Profile</h2>
+            <p>Below is your profile information and account status.</p>
+            <!-- Issue 3: Missing closing bracket on img tag -->
+            <img src="avatar.png" alt="Profile Picture" width="100" height="100"
         </div>
 
-        <div id="main-content">
-            <h2>Section 2</h2>
-            <p>Another section using the same ID.</p>
+        <div class="card">
+            <h2>Account Settings</h2>
+            <form id="profile-form">
+                <label for="username">Username:</label><br>
+                <input type="text" id="username" name="username"><br><br>
+
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email"><br><br>
+
+                <!-- Issue 4: onclick calls an undefined function name -->
+                <button type="button" class="btn" onclick="saveProfileData()">Save Settings</button>
+            </form>
         </div>
 
-        <!-- Issue 12: Broken form setup -->
-        <form id="user-form">
-            <label for="username">User Name:</label>
-            <!-- Issue 13: Typo in input type attribute -->
-            <input type="text-field" name="username" id="username"><br><br>
+        <div class="card">
+            <h2>Activity Stats</h2>
+            <ul>
+                <li>Total Logins: 42</li>
+                <li>Tasks Completed: 128</li>
+                <!-- Issue 5: Mismatched tag -->
+                <li>Account Status: Active</p>
+            </ul>
+        </div>
+    <!-- Missing closing div tag for .container -->
 
-            <label for="age">Age:</label>
-            <input type="number" name="age" id="user-age"><br><br>
+    <div class="footer">
+        <p>&copy; 2026 Interactive Web App</p>
+    </div>
 
-            <!-- Issue 14: Incorrect function reference in onclick -->
-            <button type="button" onclick="processData()">Submit Data</button>
-        </form>
-
-        <!-- Issue 15: Table with severe structural errors -->
-        <table>
-            <tr>
-                <th>Name</th>
-                <th>Role</th>
-            <!-- Missing closing tr tag -->
-            <tr>
-                <td>Alex</td>
-                <td>Developer</td>
-            </tr>
-            <tr>
-                <td>Jordan</td>
-                <!-- Missing td tag for second column -->
-            </tr>
-        <!-- Missing closing table tag -->
-
-    <!-- Missing closing body and html tags intentional in messy layout context -->
-    
     <script>
-        // Issue 16: Syntax Error - missing parenthesis
-        function calculateTotal a, b {
+        function saveSettings() {
+            let user = document.getElementById("username").value;
+            let mail = document.getElementById("email").value;
+
+            // Issue 6: Reference error - variable 'userEmail' was not defined
+            if (user === "" || userEmail === "") {
+                alert("Please fill in all fields!");
+            } else {
+                alert("Settings saved for " + user);
+            }
+        }
+
+        function calculateScore(a, b) {
+            // Issue 7: Unclosed string literal syntax error
+            console.log("Calculating score...;
             return a + b;
         }
-
-        // Issue 17: Reference Error - variable 'total' is undefined
-        function displayResult() {
-            let finalValue = total * 2;
-            console.log(finalValue);
-        }
-
-        // Issue 18: Syntax Error - unclosed string literal
-        function processForm() {
-            let nameInput = document.getElementById("username").value;
-            alert("Form submitted for: + nameInput);
-        }
-
-        // Issue 19: Logical Error - infinite loop potential or constant re-assignment error
-        const maxCount = 10;
-        for (let i = 0; i < maxCount; i--) {
-            // Decrementing i will cause an infinite loop
-            if (i < -5) break; // emergency break for runtime sanity
-        }
-
-        // Issue 20: Event listener targeted at non-existent element
-        document.getElementById("non-existent-btn").addEventListener("click", function() {
-            console.log("Clicked!");
-        });
     </script>
 </body>
 </html>
