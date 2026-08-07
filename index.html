@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charSet="UTF-8">
+    <title>Broken Web Page Example</title>
+    
+    <!-- Issue 1: Broken link tag syntax -->
+    <link rel="stylesheet" href="style.css" type="text/css"
+    
+    <!-- Issue 2: Invalid internal stylesheet syntax -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0
+            color: #333
+            margin: 0
+            padding: 0;
+        }
+
+        /* Issue 3: Missing selector name */
+        {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        
+        /* Issue 4: Unclosed class block above breaks .card styling */
+        .card {
+            background: white;
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-top: 10px;
+        }
+
+        /* Issue 5: Invalid property & missing colon */
+        .btn 
+            background color blue;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Issue 6: Mismatched heading tags -->
+    <h1>Welcome to My Broken Page</h3>
+
+    <!-- Issue 7: Unclosed container div -->
+    <div class="container">
+        <p>This page contains intentional syntax, logical, and structural errors for testing and debugging practice.</p>
+
+        <!-- Issue 8: Invalid image tag and broken attributes -->
+        <img src="avatar.jpg" alt="User Profile" height="100px" width=100px
+
+        <!-- Issue 9: Mismatched list tags -->
+        <ul>
+            <li>First Item</li>
+            <li>Second Item
+            <li>Third Item</p>
+        </ol>
+
+        <!-- Issue 10: Broken hyperlink with invalid quotes and missing target -->
+        <p>Click <a href=https://example.com target"_blank">here</a> to visit an external website.</p>
+
+        <!-- Issue 11: Duplicate ID attributes -->
+        <div id="main-content">
+            <h2>Section 1</h2>
+            <p>Some section text goes here...</p>
+        </div>
+
+        <div id="main-content">
+            <h2>Section 2</h2>
+            <p>Another section using the same ID.</p>
+        </div>
+
+        <!-- Issue 12: Broken form setup -->
+        <form id="user-form">
+            <label for="username">User Name:</label>
+            <!-- Issue 13: Typo in input type attribute -->
+            <input type="text-field" name="username" id="username"><br><br>
+
+            <label for="age">Age:</label>
+            <input type="number" name="age" id="user-age"><br><br>
+
+            <!-- Issue 14: Incorrect function reference in onclick -->
+            <button type="button" onclick="processData()">Submit Data</button>
+        </form>
+
+        <!-- Issue 15: Table with severe structural errors -->
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Role</th>
+            <!-- Missing closing tr tag -->
+            <tr>
+                <td>Alex</td>
+                <td>Developer</td>
+            </tr>
+            <tr>
+                <td>Jordan</td>
+                <!-- Missing td tag for second column -->
+            </tr>
+        <!-- Missing closing table tag -->
+
+    <!-- Missing closing body and html tags intentional in messy layout context -->
+    
+    <script>
+        // Issue 16: Syntax Error - missing parenthesis
+        function calculateTotal a, b {
+            return a + b;
+        }
+
+        // Issue 17: Reference Error - variable 'total' is undefined
+        function displayResult() {
+            let finalValue = total * 2;
+            console.log(finalValue);
+        }
+
+        // Issue 18: Syntax Error - unclosed string literal
+        function processForm() {
+            let nameInput = document.getElementById("username").value;
+            alert("Form submitted for: + nameInput);
+        }
+
+        // Issue 19: Logical Error - infinite loop potential or constant re-assignment error
+        const maxCount = 10;
+        for (let i = 0; i < maxCount; i--) {
+            // Decrementing i will cause an infinite loop
+            if (i < -5) break; // emergency break for runtime sanity
+        }
+
+        // Issue 20: Event listener targeted at non-existent element
+        document.getElementById("non-existent-btn").addEventListener("click", function() {
+            console.log("Clicked!");
+        });
+    </script>
+</body>
+</html>
