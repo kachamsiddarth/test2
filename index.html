@@ -18,7 +18,8 @@
 
         .header {
             background-color: #1e293b;
-            color: white;
+            color: #333; /* Changed to a more accessible color */
+}
             text-align: center;
             padding: 20px;
         }
@@ -77,7 +78,7 @@
                 <input type="email" id="email" name="email"><br><br>
 
                 <!-- Issue 4: onclick calls an undefined function name -->
-                <button type="button" class="btn" onclick="saveProfileData()">Save Settings</button>
+                <button type="button" class="btn" name="save-settings-1" onclick="saveProfileData()">Save Settings</button>
             </form>
         </div>
 
